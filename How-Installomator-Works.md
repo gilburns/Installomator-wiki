@@ -1,1 +1,1 @@
-# How Installomator Works
+## How Installomator Works
