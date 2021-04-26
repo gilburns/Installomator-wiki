@@ -1,9 +1,7 @@
-## Methods to Run Installomator
+## Overview
 
-### Overview
+### Method: MDM, script policy
 
-#### Method: MDM, script policy
+### Method: MDM, triggered command
 
-#### Method: MDM, triggered command
-
-#### Method: Run locally
+### Method: Run locally
