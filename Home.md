@@ -1,4 +1,4 @@
-## Getting started with Installomator
+## Getting Started with Installomator
 
 ### Overview
 See [How Installomator Works](How-Installomator-Works) for a basic overview of Installomator and how it works.
