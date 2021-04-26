@@ -1,9 +1,7 @@
-## Contributing to Installomator
+## Overview
 
-### Overview
+### App labels
 
-#### App labels
+### Bug fixes
 
-#### Bug fixes
-
-#### Feature enhancements
+### Feature enhancements
