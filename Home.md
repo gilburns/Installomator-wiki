@@ -1,5 +1,7 @@
 ## Getting Started with Installomator
 
+The wiki is currently being worked on. Please [see the Readme.md for current documentation](https://github.com/scriptingosx/Installomator).
+
 ### Overview
 See [How Installomator Works](How-Installomator-Works) for a basic overview of Installomator and how it works.
 
