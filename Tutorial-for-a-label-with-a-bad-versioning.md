@@ -1,4 +1,4 @@
-# Tutorial for a label with a bad versioning
+We try to illustrate the systematics in creating a label, and show the procedure, but it goes all bad with this label. Maybe software developers will read this, and help with providing better web pages and versioning of apps. But at least give it a read and see how bad it can be.
 
 Example: Wally EZ Flash-software (dmg), and sed
 
