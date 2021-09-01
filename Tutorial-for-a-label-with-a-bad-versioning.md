@@ -2,7 +2,7 @@ We try to illustrate the systematics in creating a label, and show the procedure
 
 Example: Wally EZ Flash-software (dmg), and sed
 
-## buildLabel.sh
+## Start with buildLabel.sh
 
 First we grab an URL from the web site, and give that to `buildLabel.sh`, like this:
 ```
