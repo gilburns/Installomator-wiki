@@ -26,7 +26,7 @@ https://downloads-website.airtame.com/get.php?platform=mac&amp;pkg=true&amp;_ga=
 ```
 
 `grep -o -i -E` has `-o` for only returning matching part and `-E` for regular expression.
-`cur -d` is setting a delimiter of `"` and returning the first part with `-f1`
+`cut -d` is setting a delimiter of `"` and returning the first part with `-f1`
 
 So now we have the `downloadURL`. Let's but it through `buildLabel.sh` (with quotes around the URL as it has special characters):
 ```
