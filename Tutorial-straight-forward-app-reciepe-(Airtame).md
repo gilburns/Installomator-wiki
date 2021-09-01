@@ -1,5 +1,3 @@
-# Tutorial straight forward app reciepe (Airtame)
-
 Example: Airtame, with grep, cut, and sed commands
 Download from: https://airtame.com/download/
 
