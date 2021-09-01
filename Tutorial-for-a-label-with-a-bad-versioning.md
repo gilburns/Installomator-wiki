@@ -53,7 +53,7 @@ Installomator valuesfromarguments \
               type=dmg \
               downloadURL=https://configure.zsa.io/wally/osx \
               expectedTeamID=V32BWKSNYH \
-              BLOCKING_PROCESS_ACTION=prompt_user_loop \
+              BLOCKING_PROCESS_ACTION=prompt_user \
               NOTIFY=all
 ```
 
