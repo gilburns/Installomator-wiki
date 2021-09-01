@@ -84,7 +84,7 @@ So at least we have `expectedTeamID="V32BWKSNYH"`, but what about the version.
 
 To find the version, we can already notice in the URLs above that the version is part of the URL.
 
-It is always the best to make sure that labels contain the appNewVersion/variable, as we can then make sure to only ask the user to close the app, if we actually have an update for them. If it is not provided, Installomator will ask to close it, before going through with the updat, even though it is actually not updated.
+It is always the best to make sure that labels contain the `appNewVersion` variable, as we can then make sure to only ask the user to close the app, if we actually have an update for them. If it is not provided, Installomator will ask to close it, before going through with the update, even though it is actually not updated.
 
 The easiest way to start out is to do `curl -fsIL` and then enter the download URL, as that will write out headings (I) from the server of the file, and accept redirects (L) (with force and silent), like this:
 `curl -fsIL https://configure.zsa.io/wally/osx`
