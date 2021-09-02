@@ -1,9 +1,10 @@
 Example: Airtame, with grep, cut, and sed commands
-Download from: https://airtame.com/download/
+Download from: `https://airtame.com/download/`
 
 ## Isolating download link
 
-Hoover the mouse over the download link, and notice that part of the URL is “platform=mac”. Let's see if we can use that for something:
+Hoover the mouse over the download link, and notice that part of the URL is “`platform=Mac`.” Let's see if we can use that for something:
+
 ```
 % curl -fs https://airtame.com/download/ | grep -i platform=mac
 <a class="air-button air-button my-4 air-button--primary air-button--large" href="https://downloads-website.airtame.com/get.php?platform=mac&amp;_ga=2.103036160.1897251541.1572251943-2078298285.1570016830" data-air-test="download_for_mac">
@@ -11,15 +12,17 @@ Hoover the mouse over the download link, and notice that part of the URL is “p
 <p><a href="https://downloads-website.airtame.com/get.php?platform=mac&amp;pkg=true&amp;_ga=2.103036160.1897251541.1572251943-2078298285.1570016830">Mac (PKG)</a></p>
 ```
 
-`grep -i` means case insensitive search for lines with “platform=mac” in them.
+`grep -i` means case insensitive search for lines with “`platform=mac`” in them.
 
 That was a hit. I think I will prefer that pkg-installer, so I will choose this download:
+
 ```
 % curl -fs https://airtame.com/download/ | grep -i platform=mac | grep -i pkg=true
 <p><a href="https://downloads-website.airtame.com/get.php?platform=mac&amp;pkg=true&amp;_ga=2.103036160.1897251541.1572251943-2078298285.1570016830">Mac (PKG)</a></p>
 ```
 
-The download link is hidden in a href-part of the HTML code, surrounded by “"”. We can use `grep` to make sure we have the https part, use `cut` to separate the “"”, like this:
+The download link is hidden in a `href-part` of the HTML code, surrounded by “`"`”. We can use `grep` to make sure we have the `https` part, use `cut` to separate the “"”, like this:
+
 ```
 % curl -fs https://airtame.com/download/ | grep -i platform=mac | grep -i pkg=true | grep -o -i -E "https.*" | cut -d '"' -f1
 https://downloads-website.airtame.com/get.php?platform=mac&amp;pkg=true&amp;_ga=2.103036160.1897251541.1572251943-2078298285.1570016830
@@ -29,6 +32,7 @@ https://downloads-website.airtame.com/get.php?platform=mac&amp;pkg=true&amp;_ga=
 `cut -d` is setting a delimiter of `"` and returning the first part with `-f1`
 
 So now we have the `downloadURL`. Let's but it through `buildLabel.sh` (with quotes around the URL as it has special characters):
+
 ```
 % /Users/st/Documents/GitHub/Installomator/utils/buildLabel.sh "https://downloads-website.airtame.com/get.php?platform=mac&amp;pkg=true&amp;_ga=2.103036160.1897251541.1572251943-2078298285.1570016830"
 Changing directory to /Users/st/Downloads
@@ -67,6 +71,7 @@ Put this file in folder “fragments/labels”.
 ```
 
 Notice how we also get a version number. BUT also notice how we did not get a pkg installer, even though the donwload link kind of hintet at that. We should probably just use the first URL instead, and locate the download link like this:
+
 ```
 % curl -fs https://airtame.com/download/ | grep -i platform=mac | head -1 | grep -o -i -E "https.*" | cut -d '"' -f1
 https://downloads-website.airtame.com/get.php?platform=mac&amp;_ga=2.103036160.1897251541.1572251943-2078298285.1570016830
@@ -77,6 +82,7 @@ https://downloads-website.airtame.com/get.php?platform=mac&amp;_ga=2.103036160.1
 ## Isolating the version number
 
 It looks like the version number is part of the download URL in a redirect, so let try this command:
+
 ```
 % curl -fsIL "https://downloads-website.airtame.com/get.php?platform=mac&amp;_ga=2.103036160.1897251541.1572251943-2078298285.1570016830" | grep -i ^location
 location: https://airtame-app.b-cdn.net/app/latest/mac/Airtame-4.2.1.dmg
@@ -96,6 +102,7 @@ So we did get the version number! Let's isolate that (using `sed` with regular e
 ## Final label
 
 So we can now clean up the final label with download link and version. In order to not repeat the download link command, iwe refer to it by it’s variable name. Like this:
+
 ```
 airtame)
     name="Airtame"
