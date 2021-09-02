@@ -24,7 +24,6 @@ Package found
 For PKGs it's advised to find packageID for version checking
 <pkg-ref id="us.zoom.pkg.zp" version="5.7.3865.0810" onConclusion="none" installKBytes="800263">#zp.pkg</pkg-ref>
 us.zoom.pkg.zp
-```
 
 Above is the possible packageIDs that can be used, and the correct one is probably one of those with a version number. More investigation might be needed to figure out correct packageID if several are displayed.
 
@@ -34,7 +33,6 @@ Labels should be named in small caps, numbers `0-9`, “`-`” (dash or hyphen),
 
 `appNewVersion` is often difficult to find. Can sometimes be found in the filename, but also on a web page. See `archivePath` above if link contains information about this.
 
-```
 zoomrooms)
     name="ZoomRooms"
     type="pkg"
@@ -43,10 +41,10 @@ zoomrooms)
     appNewVersion=""
     expectedTeamID="BJ4HAAB9B3"
     ;;
-```
 
 Above should be saved in a file with exact same name as label, and given extension “.sh”.
 Put this file in folder “`fragments/labels`”.
+```
 
 Please note the label type (`pkg`), and that our result contains `packageID`. The result could have been several IDs, and then we would have to figure out which one is the most likely to be used, like which one has the correct version.
 
