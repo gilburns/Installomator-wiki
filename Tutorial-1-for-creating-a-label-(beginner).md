@@ -47,9 +47,8 @@ zoomrooms)
 
 Above should be saved in a file with exact same name as label, and given extension “.sh”.
 Put this file in folder “`fragments/labels`”.
-```
 
-Please note the label type (pkg), and that our result contains `packageID`. The result could have been several IDs, and then we would have to figure out which one is the most likely to be used, like which one has the correct version.
+Please note the label type (`pkg`), and that our result contains `packageID`. The result could have been several IDs, and then we would have to figure out which one is the most likely to be used, like which one has the correct version.
 
 ## What about the version of the software?
 
