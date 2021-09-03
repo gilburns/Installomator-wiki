@@ -1,5 +1,4 @@
-(With “beginner”, it is still necessary to know how the Terminal is working and understand some basic shell scripting, but we hope it is still useful. 
-Armin Briegel have created great articles for learning to script: [Scripting macOS](https://scriptingosx.com/2021/07/scripting-macos-part-1-first-script/) )
+(With “beginner”, it is still necessary to know how the Terminal is working and understand some basic shell scripting, but we hope it is still useful. Armin Briegel have created great articles for learning to script: [Scripting macOS](https://scriptingosx.com/2021/07/scripting-macos-part-1-first-script/) )
 
 Example: ZoomRooms (pkg), and cut
 
