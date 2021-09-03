@@ -34,10 +34,14 @@ https://downloads-website.airtame.com/get.php?platform=mac&amp;pkg=true&amp;_ga=
 So now we have the `downloadURL`. Let's but it through `buildLabel.sh` (with quotes around the URL as it has special characters):
 
 ```
-% /Users/st/Documents/GitHub/Installomator/utils/buildLabel.sh "https://downloads-website.airtame.com/get.php?platform=mac&amp;pkg=true&amp;_ga=2.103036160.1897251541.1572251943-2078298285.1570016830"
-Changing directory to /Users/st/Downloads
+% buildLabel.sh "https://downloads-website.airtame.com/get.php?platform=mac&amp;pkg=true&amp;_ga=2.103036160.1897251541.1572251943-2078298285.1570016830"
+Changing directory to 2021-09-03-13-09-53
+Working dir: ~/Downloads/2021-09-03-13-09-53
 Downloading https://downloads-website.airtame.com/get.php?platform=mac&amp;pkg=true&amp;_ga=2.103036160.1897251541.1572251943-2078298285.1570016830
-downloadOut: get.php?platform=mac&amp;pkg=true&amp;_ga=2.103036160.1897251541.1572251943-2078298285.1570016830
+Redirecting to (maybe this can help us with version):
+location: https://airtame-app.b-cdn.net/app/latest/mac/Airtame-4.2.1.dmg
+downloadOut:
+get.php?platform=mac&amp;pkg=true&amp;_ga=2.103036160.1897251541.1572251943-2078298285.1570016830
 https://airtame-app.b-cdn.net/app/latest/mac/Airtame-4.2.1.dmg
 archiveTempName: get.php?platform=mac&amp;pkg=true&amp;_ga=2.103036160.1897251541.1572251943-2078298285.1570016830
 archivePath: https://airtame-app.b-cdn.net/app/latest/mac/Airtame-4.2.1.dmg
@@ -55,7 +59,7 @@ Verifying: /Volumes/Airtame 4.2.1/Airtame.app
 
 Labels should be named in small caps, numbers 0-9, “-”, and “_”. No other characters allowed.
 
-appNewVersion is often difficult to find. Can sometimes be found in the filename, but also on a web page. See archivePath above if link contains information about this.
+appNewVersion is often difficult to find. Can sometimes be found in the filename, sometimes as part of the download redirects, but also on a web page. See redirect and archivePath above if link contains information about this. That is a good place to start
 
 airtame421)
     name="Airtame-4.2.1"
@@ -70,8 +74,7 @@ Above should be saved in a file with exact same name as label, and given extensi
 Put this file in folder “fragments/labels”.
 ```
 
-Notice how we also get a version number. BUT also notice how we did not get a pkg installer, even though the donwload link kind of hintet at that. We should probably just use the first URL instead, and locate the download link like this:
-
+Notice how we also get a version number. BUT also notice how we did not get a pkg installer, even though the download link kind of hintet at that. We should probably just use the first URL instead, and locate the download link like this:
 ```
 % curl -fs https://airtame.com/download/ | grep -i platform=mac | head -1 | grep -o -i -E "https.*" | cut -d '"' -f1
 https://downloads-website.airtame.com/get.php?platform=mac&amp;_ga=2.103036160.1897251541.1572251943-2078298285.1570016830
@@ -81,7 +84,7 @@ https://downloads-website.airtame.com/get.php?platform=mac&amp;_ga=2.103036160.1
 
 ## Isolating the version number
 
-It looks like the version number is part of the download URL in a redirect, so let try this command:
+From the output of `buildLabel.sh` we could see the version number as part of the redirects, that we can see from this command:
 
 ```
 % curl -fsIL "https://downloads-website.airtame.com/get.php?platform=mac&amp;_ga=2.103036160.1897251541.1572251943-2078298285.1570016830" | grep -i ^location
@@ -113,6 +116,6 @@ airtame)
     ;;
 ```
 
-If `appName` is equal to `name`, with only `.app` appended, than we don't need that, so that was removed. I also cleaned up the label name and the `name` variable.
+If `appName` is equal to `name`, with only `.app` appended, then we don't need that, so that line was removed. I also cleaned up the label name and the `name` variable.
 
 I have verified this by opening the dmg that was downloaded, and looked at the app there. Both version and name match what we assumed.
