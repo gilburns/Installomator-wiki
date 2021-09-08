@@ -164,4 +164,4 @@ wallyezflash)
      ;;
 ```
 
-Not sure I think this is a great label to include in our release, so if you need this, stick to `valuesfromarguments` above.
+I first considered to not include this label, but to be honest, we have other labels without a version. This would not really be any different, even though it’s a mess.
