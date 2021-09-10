@@ -5,7 +5,7 @@ So, someone at the Slack channel asked:
 
 Well, this is what I did…
 
-## I DuckDuckGo'ed “Authy”
+## I DuckDuckGo’ed “Authy”
 (I don't google for stuff anymore…)
 
 I got a link to this download page: [https://authy.com/download/](https://authy.com/download/), where I had to push a button to initiate the download.
