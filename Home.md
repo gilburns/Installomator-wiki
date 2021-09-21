@@ -10,3 +10,6 @@ To search this wiki use the "Search" field in the GitHub navigation bar above. T
 
 ## Tutorials
 We now have 3 tutorials, trying to illustrate the procedure to build the label and find the version of the app. The various text tools used is explained along the way.
+
+- [Tutorial 1 for creating a label (beginner)](Tutorial-1-for-creating-a-label-(beginner))
+- [Tutorial 2 for a straight forward app reciepe (Airtame)](Tutorial-2-for-a-straight-forward-app-reciepe-(Airtame))
