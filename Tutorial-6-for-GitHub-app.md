@@ -50,6 +50,7 @@ Executable=/Users/st/Downloads/Microsoft Azure Storage Explorer.app/Contents/Mac
 designated => identifier "com.microsoft.StorageExplorer" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = UBF8T346G9
 ```
 
+It's the last "number" after the equal character in the third line:
 `expectedTeamID="UBF8T346G9"`
 
 ## Blocking processes
