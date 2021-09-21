@@ -55,9 +55,9 @@ It's the last "number" after the equal character in the third line:
 
 ## Blocking processes
 
-This app looks like it's the only process started up, so we don't need to handle any specific other process (in case we need this process to be quit or killed before we can update the app. 
+This app looks like it’s the only process started up, so we don't need to handle any specific other process (in case we need this process to be quit or killed before we can update the app). 
 
-So it would have been this:
+So it would have been this (but that matches the original `name` so we do not need it):
 `blockingProcesses=( "Microsoft Azure Storage Explorer" )`
 
 ## Final label
