@@ -26,11 +26,9 @@ A script “RemoveInstallomator.sh” has been provided to remove Installomator 
 
 In this solution we recommend to use Installomator as a supplement to Mosyle Catalog. Mosyle Catalog is somewhat easier and can automatically update the outdated apps. But Mosyle does not offer as much software in their catalog as we have, so Installomator has it’s own right. And maybe you just want the extended control from using Installomator.
 
-The way to implement Installomator is to install it as a pkg on the fleet of Macs, using “Install PKG”. 
+There are several ways to implement Installomator. One is to install it as a pkg on the fleet of Macs, using “Install PKG”. For deployment it can also be part of the DEP profile.
 
-Then use “Custom Commands” to run the MDM scripts.
-
-Use the “App-loop script.sh” to make a first time installation of all the software you want Installomator to install, and with the settings you want to use for this purpose.
+But it can also be installed as a “Custom Command” using variables, where the Installomator.pkg from the CDN is added to the script for installation. That script is “MDMMosyle Install.sh“, where the CDN-variable has to be filled out as well as the software labels that should be installed.
 
 Use the “App script.sh” for the subsequent updates or the Self Service display (these can be very nice by extracting the icon from the software, and add that to the “Custom Command” in Mosyle.
 
