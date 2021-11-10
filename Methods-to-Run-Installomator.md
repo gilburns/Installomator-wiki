@@ -8,7 +8,7 @@ Then a policy is created, that will use this script, and fill out the various pa
 
 You would create one policy per software title, and maybe you would use different policies for self service (as these often should have `NOTIFY=all`.
 
-## MDM, pkg-installed
+## MDM, pkg-installed (running locally)
 
 Many MDM solutions can run scripts, but not as large a script as Installomator has become. For these solutions we recommend to install the script on the managed Macs, and call it with a smaller script from the MDM.
 
@@ -19,6 +19,8 @@ Look for the scripts to be used inside the MDM solution in the MDM-folder.
 The scripts “Installomator update.sh” is for updating the installation of Installomator, but grabbing the latest version from GitHub, and install that PKG.
 
 The script “Manual valuesfromarguments.sh” is an example of how to install a custom software title, where you put in the values for the software manually.
+
+A script “RemoveInstallomator.sh” has been provided to remove Installomator completely from a Mac.
 
 ### Mosyle (Manager, Business, and Fuse)
 
