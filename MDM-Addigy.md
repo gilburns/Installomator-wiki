@@ -14,4 +14,4 @@ If automatic updates should be run, make som Maintenance scripts for this. Bette
 
 The maintenance script could have a line for investigating if the given software is installed, and exit if it is not (so it will only be updated if it is actually installed).
 
-Also see [Methods to Run Installomator](Methods to Run Installomator) for the description of the rest of the files in the MDM-folder.
+Also see [Methods to Run Installomator](Methods-to-Run-Installomator) for the description of the rest of the files in the MDM-folder.

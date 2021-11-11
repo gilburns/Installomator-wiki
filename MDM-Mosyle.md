@@ -14,4 +14,4 @@ Use the “App script.sh” for the subsequent updates or the Self Service displ
 This script can be set to automatically run on the clients, like this:
 ![Mosyle Execution settings](img/Mosyle%20Execution%20settings.png)
 
-Also see [Methods to Run Installomator](Methods to Run Installomator) for the description of the rest of the files in the MDM-folder.
+Also see [Methods to Run Installomator](Methods-to-Run-Installomator) for the description of the rest of the files in the MDM-folder.
