@@ -1,5 +1,3 @@
-## Mosyle (Manager, Business, and Fuse)
-
 In this solution we recommend to use Installomator as a supplement to Mosyle Catalog. Mosyle Catalog is somewhat easier and can automatically update the outdated apps. But Mosyle does not offer as much software in their catalog as we have, so Installomator has it’s own right. And maybe you just want the extended control from using Installomator.
 
 There are several ways to implement Installomator. One is to install it as a pkg (that we already signed and notarized) on the fleet of Macs, using “Install PKG”. For deployment it can also be part of the DEP profile. Then call this installation from “Custom Commands”.

@@ -1,5 +1,3 @@
-## Addigy
-
 Addigy has a large built in software catalog, but the updates has to be manually sent out to clients, and if this needs to be automated, Installomator is a great addition. Addigy has a condition script before installing software, and it will use this as a check before allowing the script/the installation to run. In Self Service if that condition script is not right, the software cannot be clicked to be installed (this is pretty neat).
 
 Create a custom software installer to install the Installomator PKG, as well as run the looping software installation of all the software needed. This should not be shown in Self Service. This is the “MDMAddigy CustomSoftware.sh” script.
