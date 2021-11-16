@@ -1,13 +1,9 @@
 Example: Microsoft Azure Storage Explorer
 
-So a user was trying to make a label for a github.com app from Microsoft. The repository is here:
+This tutorial is ceompletely new as of 16 November 2021, as the `buildLabel.sh`-script has been improved a lot.
+
+A user was trying to make a label for a github.com app from Microsoft. The repository is here:
 [AzureStorageExplorer](https://github.com/microsoft/AzureStorageExplorer)
-
-Installomator has buil in support for github repositories, we almost just need to call them with their user-name and repository-name.
-
-But we need to know the name of the archive, as well as knowing what archive it is. 
-
-__Please note:__ `buildLabel.sh` is no help for this kind of label.
 
 ## github.com structure
 
@@ -20,11 +16,67 @@ In order to figure out the rest of the label contruction, we need to see how the
 We can see that the release has 3 binaries; Linux, Mac, and Windows. We can also see that the Mac archive is a zip archive. 
 `type="zip"`
 
-## github fun
+## `buildLabel.sh` magic
 
-__For fun__, try to go to the releases of the [Wally-label in Tutorial 3](https://github.com/zsa/wally/releases). The latest release is right now only a Linux version, and the latest Mac release is somewhere down the list. We cannot use the built in tools in Installomator for github in this situation, as they have not aligned the releases so that the Mac version will be released in each release, and Installomator would fail (the app is also versioned incorrectly, but that is another story to be read in that tutorial).
+Installomator.sh has built-in support for github repositories, and now `buildLabel.sh` can build those labels very easily.
 
-## archive name on github
+The latest version for Mac is this: [https://github.com/microsoft/AzureStorageExplorer/releases/download/v1.21.3/Mac_StorageExplorer.zip](https://github.com/microsoft/AzureStorageExplorer/releases/download/v1.21.3/Mac_StorageExplorer.zip)
+
+So we give that URL to `buildLabel.sh` and look at this “magic”. See the GitHub section and the final label produced:
+```
+% Installomator/utils/buildLabel.sh "https://github.com/microsoft/AzureStorageExplorer/releases/download/v1.21.3/Mac_StorageExplorer.zip"
+Changing directory to /Users/st/Downloads/2021-11-16-19-19-44
+Working dir: /Users/st/Downloads/2021-11-16-19-19-44
+Downloading https://github.com/microsoft/AzureStorageExplorer/releases/download/v1.21.3/Mac_StorageExplorer.zip
+Mac_StorageExplorer.zip
+Redirecting to (maybe this can help us with version):
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   662  100   662    0     0   2259      0 --:--:-- --:--:-- --:--:--  2330
+100  201M  100  201M    0     0  16.8M      0  0:00:11  0:00:11 --:--:-- 33.6M
+archiveTempName: Mac_StorageExplorer.zip
+archivePath: https://objects.githubusercontent.com/github-production-release-asset-2e65be/124597291/cb3958ea-ea6e-42a1-9539-08529efd31e6?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20211116%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20211116T181945Z&X-Amz-Expires=300&X-Amz-Signature=fcbf7f537daf3b448d132de443e3dad5036fd3610e0ffe326bf79dfda4e5f419&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=124597291&response-content-disposition=attachment%3B%20filename%3DMac_StorageExplorer.zip&response-content-type=application%2Foctet-stream
+Calculated archiveName: Mac_StorageExplorer.zip
+name: Mac_StorageExplorer
+archiveExt: zip
+identifier: macstorageexplorer
+Compressed file found
+App found: /Users/st/Downloads/2021-11-16-19-19-44/Microsoft Azure Storage Explorer.app
+Application investigation.
+Team ID found for app: UBF8T346G9
+https://github.com/microsoft/AzureStorageExplorer/releases/download/v1.21.3/Mac_StorageExplorer.zip
+
+**********
+
+Found GitHub path
+Github place: microsoft AzureStorageExplorer
+Latest URL on github: https://github.com/microsoft/AzureStorageExplorer/releases/download/v1.21.3/Mac_StorageExplorer.zip 
+Latest version: 1.21.3
+GitHub calculated URL matches entered URL.
+
+**********
+
+Labels should be named in small caps, numbers 0-9, “-”, and “_”. No other characters allowed.
+
+macstorageexplorer)
+    name="Microsoft Azure Storage Explorer"
+    type="zip"
+    downloadURL="$(downloadURLFromGit microsoft AzureStorageExplorer)"
+    appNewVersion="$(versionFromGit microsoft AzureStorageExplorer)"
+    expectedTeamID="UBF8T346G9"
+    ;;
+
+Label converted to GitHub label without errors.
+Details can be seen above.
+
+Above should be saved in a file with exact same name as label, and given extension “.sh”.
+Put this file in folder “fragments/labels”.
+```
+
+This worked out as the downloaded archive ended in “zip” and there was only one archive with that extension in this release.
+
+## Archive name on github
 
 In the current case, it could be argued that zip would be enough to find the Mac version among the Linux and Windows versions, as that is the only zip archive, but we can make certain to hit the Mac release by using the variable `archiveName` by specifying the name of the archive.
 
@@ -35,23 +87,6 @@ But we can safely use this (I expect, but we have no idea if something changes i
 
 Download that latest version now, and expand that so we can detect it's name (without the .app extension):
 `name="Microsoft Azure Storage Explorer"` 
-
-In this case we do not need the `appName` variable, as `name` is enough and will be matched by Installomator with ".app" appended to the `name` variable.
-
-It would have been this:
-`appName="Microsoft Azure Storage Explorer.app"`
-
-## Manually detecting the TeamID
-
-We need the `TeamID` of the app that we downloaded and expanded to ~/Downloads:
-```
-% codesign -display -r - Microsoft\ Azure\ Storage\ Explorer.app 
-Executable=/Users/st/Downloads/Microsoft Azure Storage Explorer.app/Contents/MacOS/Microsoft Azure Storage Explorer
-designated => identifier "com.microsoft.StorageExplorer" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = UBF8T346G9
-```
-
-It's the last "number" after the equal character in the third line:
-`expectedTeamID="UBF8T346G9"`
 
 ## Blocking processes
 
@@ -73,3 +108,50 @@ microsoftazurestorageexplorer)
     archiveName="Mac_StorageExplorer.zip"
     ;;
 ```
+
+# Other GitHub titles
+
+## Marathon trilogy
+
+For old Mac fans, The Marathon trilogy has been released, also on GitHub.
+
+For “Marathon 2” the archive is here: [https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20210408/Marathon2-20210408-Mac.dmg](https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20210408/Marathon2-20210408-Mac.dmg)
+
+And `buildLables.sh` will do some calculations on that download here:
+```
+Found GitHub path
+Github place: Aleph-One-Marathon alephone
+Latest URL on github: https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20210408/AlephOne-20210408-Mac.dmg 
+Latest version: 20210408
+Calculated GitHub URL almost identical, only this diff:
+“release-20210408/Marathon2-20210408-Mac.dmg” and “release-20210408/AlephOne-20210408-Mac.dmg”
+Could be version difference or difference in archiveName for a given release.
+Testing for version difference.
+Not a version problem.
+Testing for difference in archiveName.
+archiveName="Marathon2-[0-9.]*-Mac.dmg"
+Latest URL on github: https://github.com/Aleph-One-Marathon/alephone/releases/download/release-20210408/Marathon2-20210408-Mac.dmg 
+Latest version: 20210408
+GitHub calculated URL matches entered URL.
+```
+
+And end up with this label:
+```
+marathon220210408mac)
+    name="Marathon 2"
+    type="dmg"
+    archiveName="Marathon2-[0-9.]*-Mac.dmg"
+    downloadURL="$(downloadURLFromGit Aleph-One-Marathon alephone)"
+    appNewVersion="$(versionFromGit Aleph-One-Marathon alephone)"
+    expectedTeamID="E8K89CXZE7"
+    ;;
+```
+
+So only the label name needs to be renamed to `marathon2` and we are all set.
+
+Actuallly all three titles are in the same “alephone” repository, but now it can calculate a working `archiveName`, that I would not change in this case as all titles end in “-Mac.dmg”.
+
+# GitHub fun
+
+__For fun__, try to go to the releases of the [Wally-label in Tutorial 3](https://github.com/zsa/wally/releases). The latest release is right now only a Linux version, and the latest Mac release is somewhere down the list. We cannot use the built in tools in Installomator for github in this situation, as they have not aligned the releases so that the Mac version will be released in each release, and Installomator would fail (the app is also versioned incorrectly, but that is another story to be read in that tutorial).
+
