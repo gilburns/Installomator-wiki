@@ -8,13 +8,16 @@ A user was trying to make a label for a github.com app from Microsoft. The repos
 ## github.com structure
 
 We know some certain links on github to always be there:
+
 [All releases: releases](https://github.com/microsoft/AzureStorageExplorer/releases)
-[Latest release: releases/latest](https://github.com/microsoft/AzureStorageExplorer/releases/latest)
+
+[Latest release: releases/latest](https://github.com/microsoft/AzureStorageExplorer/releases/latest) (that URL will be redirected to the latest release.)
 
 In order to figure out the rest of the label contruction, we need to see how the latest release looks. So go to that URL now.
 
 We can see that the release has 3 binaries; Linux, Mac, and Windows. We can also see that the Mac archive is a zip archive. 
-`type="zip"`
+
+Copy the URL to the latest Mac release and use `buildLabel.sh` for the next step.
 
 ## `buildLabel.sh` magic
 
