@@ -18,3 +18,4 @@ We now have tutorials, trying to illustrate the procedure to build the label and
 - [Tutorial 3 for a label with a bad versioning](Tutorial-3-for-a-label-with-a-bad-versioning)
 - [Tutorial 4 label with very rare server setup for versioning (Authy)](Tutorial-4-label-with-very-rare-server-setup-for-versioning-(Authy))
 - [Tutorial 5 label with sparkle feed (Zeplin)](Tutorial-5-label-with-sparkle-feed-(Zeplin))
+- [Tutorial 6 label from GitHub](Tutorial-6-for-GitHub-app)
