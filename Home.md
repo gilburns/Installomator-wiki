@@ -10,6 +10,10 @@ In [Methods to Run Installomator](Methods-to-Run-Installomator) it’s described
 ### Searching the wiki
 To search this wiki use the "Search" field in the GitHub navigation bar above. Then on the search results page select the "Wiki" option or [use this shortcut to search](https://github.com/scriptingosx/installomator/search?q=&type=Wikis&utf8=%E2%9C%93).
 
+## Labels
+
+- [Reference guide to fields in labels](Labels-Reference-guide-to-fields)
+
 ## Tutorials
 We now have tutorials, trying to illustrate the procedure to build the label and find the version of the app. The various text tools used are explained along the way.
 
