@@ -17,6 +17,7 @@ To search this wiki use the "Search" field in the GitHub navigation bar above. T
 ## Tutorials
 We now have tutorials, trying to illustrate the procedure to build the label and find the version of the app. The various text tools used are explained along the way.
 
+- [[How to Create Pull Requests on GitHub](https://github.com/Installomator/Installomator/wiki/GitHub-howto-create-PRs)
 - [Tutorial 1 for creating a label (beginner)](Tutorial-1-for-creating-a-label-(beginner))
 - [Tutorial 2 for a straight forward app reciepe (Airtame)](Tutorial-2-for-a-straight-forward-app-reciepe-(Airtame))
 - [Tutorial 3 for a label with a bad versioning](Tutorial-3-for-a-label-with-a-bad-versioning)
