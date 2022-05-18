@@ -8,7 +8,7 @@ You can create an account on GitHub and download the [GitHub Desktop](https://de
 
 ## Create a branch for your label or other changes
 
-In order to make changes you need to create a new branch. In GitHub Desktop go to the Branch “main” and create a new branch.
+In order to make changes you need to create a new branch. In GitHub Desktop go to the Branch “main” and create a new branch. Give it a descriptive name such as the label name or `label name-update`.
 
 ![GitHub Desktop app branch](img/GitHub_Desktop_app_branch.png)
 
@@ -48,6 +48,10 @@ After changes are committed, you can create a Pull Request (PR).
 
 ![GitHub Desktop PR](img/GitHub_Desktop_app_PR.png)
 
-You will be taken to the GitHub web page to create the PR, and then it will become public in our list of PRs.
+You will be taken to the GitHub web page to create the PR, and then it will appear in [the list of PRs](https://github.com/Installomator/Installomator/pulls).
+
+Once you have submitted the PR, remember to switch back to the main branch. Any commits you add to the PR branch _will be added_ to the PR. This may be necessary when you need to amend the PR, but generally you want to avoid this. When the PR gets merged, your local branch becomes redundant and you can delete it.
+
+If you have multiple **related** labels or changes, you can put them all into a single PR, but generally we prefer one PR per label. That allows us to react differently to each label, instead of having to accept or reject all at once.
 
 __We thank you for you contribution to the project!__
