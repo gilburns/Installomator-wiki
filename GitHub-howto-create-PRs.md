@@ -50,8 +50,15 @@ After changes are committed, you can create a Pull Request (PR).
 
 You will be taken to the GitHub web page to create the PR, and then it will appear in [the list of PRs](https://github.com/Installomator/Installomator/pulls).
 
-Once you have submitted the PR, remember to switch back to the main branch. Any commits you add to the PR branch _will be added_ to the PR. This may be necessary when you need to amend the PR, but generally you want to avoid this. When the PR gets merged, your local branch becomes redundant and you can delete it.
+If you have multiple **related** labels or changes, you can put them all into a single PR. But generally we prefer one PR per label. That allows us to react differently to each label, instead of having to accept or reject all at once.
 
-If you have multiple **related** labels or changes, you can put them all into a single PR, but generally we prefer one PR per label. That allows us to react differently to each label, instead of having to accept or reject all at once.
+## What happens then?
+
+Once you have submitted the PR, remember to switch back to the main branch. Any commits you add to the PR branch _will be added_ to the PR. This may be necessary when you need to amend the PR, but generally you want to avoid this.
+
+GitHub will notify you by email when there are comments, questions, or other changes to your PR. Please react to those requests, otherwise your PR might linger or be closed without being accepted.
+
+When the PR gets merged, your local branch becomes redundant and you can delete it.
+
 
 __We thank you for you contribution to the project!__
