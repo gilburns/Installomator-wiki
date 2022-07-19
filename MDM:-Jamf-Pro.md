@@ -8,4 +8,4 @@ Then a policy is created, that will use this script, and fill out the various pa
 
 You would create one policy per software title, and maybe you would use different policies for self service (as these often should have `NOTIFY=all`.
 
-Keep in mind if you setup helper text like naming parameter 4 "DEBUG" and parameter 5 "NOTIFY" then you must fill out parameters sequentially. For example, you can leave parameter 6 blank but you must fill out parameter 4 so that parameter 5 is passed to Installomator
+Keep in mind if you setup helper text like naming parameter 5 "DEBUG" and parameter 6 "NOTIFY" then you must fill out parameters sequentially. For example, you can leave parameter 7 blank when not used, but you must fill out parameter 5 so that all filled out parameters are passed to Installomator.
