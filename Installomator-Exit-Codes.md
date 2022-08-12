@@ -4,19 +4,9 @@ Installomator has a number of exit codes when something goes wrong:
 
 `1`: Unknown label
 
-`1`: macOS Version too old
-
-`1`: Active display sleep assertion detected
-
-`1`: Error changing directory to tmp dir
-
 `2`: Download Error
 
-`3`: Error while mounting disk image
-
-`3`: Error while accessing disk image mount point
-
-`3`: Error while running the CLIInstaller
+`3`: Error while mounting disk image or while accessing disk image mount point
 
 `4`: Error verifying download
 
@@ -24,15 +14,11 @@ Installomator has a number of exit codes when something goes wrong:
 
 `6`: Not running as root
 
-`6`: Minimum OS version of the app is higher than current OS
-
 `7`: Error while copying the app
 
 `8`: Could not find app to install
 
 `9`: Error installing pkg
-
-`9`: Could not get git repo for given user and repo name
 
 `10`: User aborted update
 
@@ -40,13 +26,27 @@ Installomator has a number of exit codes when something goes wrong:
 
 `12`: Blocking process found and `silent_fail` is set
 
+`13`: Error changing directory to tmp dir (used to be `1`)
+
+`14`: Could not get git repo for given user and repo name (used to be `9`)
+
+`15`: Minimum OS version of the app is higher than current OS (used to be `6`)
+
+`16`: Error while running the CLIInstaller (used to be `3`)
+
 `20`: Could not find pkg in dmg
 
-`20`: Could not find pkg in zip
+`21`: Could not find pkg in zip (used to be `20`)
 
-`20`: Could not find dmg in zip
+`22`: Could not find dmg in zip (used to be `20`)
+
+`23`: App previously installed from App Store, and we respect that (used to be `1`)
+
+`24`: Active display sleep assertion detected (used to be `1`)
 
 `77`: No Download URL Set, this is an update only application and the updater failed
+
+`98`: Installomater requires at least macOS Mojave
 
 `99`: Unknown type
 
