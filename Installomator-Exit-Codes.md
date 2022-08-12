@@ -26,23 +26,23 @@ Installomator has a number of exit codes when something goes wrong:
 
 `12`: Blocking process found and `silent_fail` is set
 
-`13`: Error changing directory to tmp dir (used to be `1`)
+`13`: Error changing directory to tmp dir (v10, previously `1`)
 
-`14`: Could not get git repo for given user and repo name (used to be `9`)
+`14`: Could not get git repo for given user and repo name (v10, previously `9`)
 
-`15`: Minimum OS version of the app is higher than current OS (used to be `6`)
+`15`: Minimum OS version of the app is higher than current OS (v10, previously `6`)
 
-`16`: Error while running the CLIInstaller (used to be `3`)
+`16`: Error while running the CLIInstaller (v10, previously `3`)
 
 `20`: Could not find pkg in dmg
 
-`21`: Could not find pkg in zip (used to be `20`)
+`21`: Could not find pkg in zip (v10, previously `20`)
 
-`22`: Could not find dmg in zip (used to be `20`)
+`22`: Could not find dmg in zip (v10, previously `20`)
 
-`23`: App previously installed from App Store, and we respect that (used to be `1`)
+`23`: App previously installed from App Store, and we respect that (v10, previously `1`)
 
-`24`: Active display sleep assertion detected (used to be `1`)
+`24`: Active display sleep assertion detected (v10, previously `1`)
 
 `77`: No Download URL Set, this is an update only application and the updater failed
 
