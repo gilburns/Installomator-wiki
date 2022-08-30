@@ -56,6 +56,9 @@ We want Installomator to be a high quality product, and labels without this fiel
 Remember that it must match something that can be read from the installed app.
 We do not accept PRs without this field, or at least documented why it is not included.
 
+- `versionKey` (optional):
+When the version is being compared to the locally installed app, sometimes we need another field than `CFBundleShortVersionString`. Often `CFBundleVersion` is the right one, but techically it could be another field. It's usually dependant on what number the web sites most easily returns.
+
 - `packageID` (optional, but recommended for pkgs without an app)
 This variable is for pkg bundle IDs. Very usefull if a pkg only install command line tools, or the like that does not install an app. (See label `desktoppr`, `golang`, `installomator_st`, `odrive`, or `teamviewerhost`.)
 
