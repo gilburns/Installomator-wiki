@@ -103,7 +103,7 @@ Depending on the application or pkg there are a few more variables you can or ne
     `blockingProcesses=( $name )`
   When a package contains multiple applications, _all_ should be listed, e.g:
     `blockingProcesses=( "Keynote" "Pages" "Numbers" )`
-  When a workflow has no blocking processes, use
+  When a workflow has no blocking processes or it should not be checked (if the pkg will handle this), use
     `blockingProcesses=( NONE )`
 
 - `pkgName`: (optional, only used for `dmgInPkg` and `dmgInZip`)
