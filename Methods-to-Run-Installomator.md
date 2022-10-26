@@ -1,19 +1,11 @@
-## MDM solution with full script
+## MDM policy with Installomator script
 
-Especially Jamf Pro can easily handle a very large script, like Installomator, and run that on managed Macs and at the same time calling the script with various parameters. 
+MDMs like Jamf Pro will have a configured policy with a script configured in it, like the Installomator script, and the script will run when the policy runs.
 
-Other MDM solutions might be able to do the same, but Installomator can also be locally installed and just vcalled from there with a much smaller script.
-
-## MDM, pkg-installed (running locally)
+## MDM script with locally installed Installomator
 
 Many MDM solutions can run scripts, but not as large a script as Installomator has become. For these solutions we recommend to install the script on the managed Macs, and call it with a smaller script from the MDM.
 
-For these kinds of solutions we have provided both the pkg-file (signed and notarized), so it can even be installed as part of the DEP profile.
+For these kinds of solutions we have provided a signed and notarized PKG, [see Releases.](https://github.com/Installomator/Installomator/releases/).
 
-Look for the scripts to be used inside the MDM solution in the MDM-folder.
-
-The scripts “Installomator update.sh” is for updating the installation of Installomator, but grabbing the latest version from GitHub, and install that PKG.
-
-The script “Manual valuesfromarguments.sh” is an example of how to install a custom software title, where you put in the values for the software manually.
-
-A script “RemoveInstallomator.sh” has been provided to remove Installomator completely from a Mac.
+We have a README and several example scripts in the [Installomator repo's MDM folder](https://github.com/Installomator/Installomator/tree/main/MDM).
