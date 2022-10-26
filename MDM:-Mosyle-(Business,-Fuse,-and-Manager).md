@@ -6,8 +6,4 @@ With Mosyle, you can install Installomator locally by either uploading the PKG t
 
 We have a README and several example scripts in the [Installomator repo's MDM folder](https://github.com/Installomator/Installomator/tree/main/MDM).
 
-Use the “App script.sh” for the subsequent updates or the Self Service display (these can be very nice by extracting the icon from the software, and add that to the “Custom Command” in Mosyle.
-
-This script can be set to automatically run on the clients, like this:
-
-![Mosyle Execution settings](img/Mosyle%20Execution%20settings.png)
+With Mosyle, Custom Commands can be run once, on a regular basis using a Custom Command schedule, or through Self Service only.
