@@ -9,3 +9,5 @@ Then a policy is created, that will use this script, and fill out the various pa
 You would create one policy per software title, and maybe you would use different policies for self service (as these often should have `NOTIFY=all`.
 
 Keep in mind if you setup helper text like naming parameter 5 "DEBUG" and parameter 6 "NOTIFY" then you must fill out parameters sequentially. For example, you can leave parameter 7 blank when not used, but you must fill out parameter 5 so that all filled out parameters are passed to Installomator.
+
+We have a README and several example scripts in the [Installomator repo's MDM folder](https://github.com/Installomator/Installomator/tree/main/MDM) which can be used with Jamf. Additionally, we have Jamf example scripts in the Jamf subfolder. 
