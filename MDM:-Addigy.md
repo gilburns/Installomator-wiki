@@ -3,11 +3,11 @@ Addigy has a large built in software catalog, but the updates has to be manually
 Create a custom software installer to install the Installomator PKG, as well as run the looping software installation of all the software needed. This should not be shown in Self Service. This is the “MDMAddigy CustomSoftware.sh” script.
 ![Addigy Custom software](img/Addigy%20Custom%20software.png)
 
-Look for the scripts to be used inside the MDM solution in the MDM-folder.
+We have a README and several example scripts in the [Installomator repo's MDM folder](https://github.com/Installomator/Installomator/tree/main/MDM).
 
 Individual custom software titles can be built using the “App script.sh”, with icons and all.
 
-If automatic updates should be run, make som Maintenance scripts for this. Better yet, make some Scripts for each software title, so it can also be used as a manual script to install the software on a given Mac. 
+If automatic updates should be run, make some Maintenance scripts for this. Better yet, make some Scripts for each software title, so it can also be used as a manual script to install the software on a given Mac. 
 ![Addigy Script](img/Addigy%20Script.png)
 
 The maintenance script could have a line for investigating if the given software is installed, and exit if it is not (so it will only be updated if it is actually installed).
