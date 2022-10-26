@@ -1,3 +1,5 @@
-Scripts can be run from here. Currently not testet, but likely use would be to install the PKG on the clients, and use the “App script.sh” and “App-loop script.sh” for the software installations.
+It's expected, but not tested, that Endpoint Manager can run Installomator by installing Installomator locally, and running Installomator with a script. 
 
-Also see [Methods to Run Installomator](Methods-to-Run-Installomator) for the description of the rest of the files in the MDM-folder.
+We have a README and several example scripts in the [Installomator repo's MDM folder](https://github.com/Installomator/Installomator/tree/main/MDM).
+
+Also see [Methods to Run Installomator](Methods-to-Run-Installomator).
