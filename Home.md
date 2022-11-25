@@ -1,3 +1,7 @@
+
+![Installomator logo black](https://user-images.githubusercontent.com/3985769/203938438-f412c24d-fd5c-458c-a39e-e265dd10ad0b.png)
+
+
 ## Getting Started with Installomator
 
 The wiki is currently being worked on. Please [see the Readme.md for current documentation on Installomator](https://github.com/scriptingosx/Installomator).
