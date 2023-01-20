@@ -2,12 +2,10 @@
 
 ### What if the latest version of the app is already installed?
 
-Short answer: That depends on if labels will know what the latest version will be.
+It depends on the label. Some labels can determine the latest version from the vendor's website or other resource. In that case, Installomator will see the latest version is already installed and do nothing. Labels that have a `appNewVersion` variable can do this. 
 
-Longer answer:
-
-- Labels without this will re-download and re-install the latest over the existing installation.
-- Labels with this info will only install the app if the version is different than the one installed.
+- Labels without `appNewVersion` will re-download and re-install the latest over the existing installation.
+- Labels with `appNewVersion` will only download and install the app if the version is different than the one installed.
 - Labels that can use update tool will use that for the update (if the version is different)
 
 ### Why don't you just use `autopkg install`?
