@@ -10,7 +10,8 @@ The wiki is currently being worked on. Please [see the Readme.md for current doc
 
 - [Motivation and Background](Motivation-and-Background)
 - [Goals](Goals)
-- [How Installomator Works](How-Installomator-Works)
+- [What it does](What-it-does)
+- [Using Installomator](Using-Installomator)
 - [Methods to Run Installomator](Methods-to-Run-Installomator)
 
 ### Searching the wiki
