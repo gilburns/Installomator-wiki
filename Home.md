@@ -12,6 +12,7 @@ The wiki is currently being worked on. Please [see the Readme.md for current doc
 - [Goals](Goals)
 - [What it does](What-it-does)
 - [Using Installomator](Using-Installomator)
+- [Configuration and Variables](Configuration-and-Variables)
 - [Methods to Run Installomator](Methods-to-Run-Installomator)
 
 ### Searching the wiki
