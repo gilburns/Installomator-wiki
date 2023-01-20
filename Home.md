@@ -1,7 +1,7 @@
 
 ![Installomator logo black](https://user-images.githubusercontent.com/3985769/203938438-f412c24d-fd5c-458c-a39e-e265dd10ad0b.png)
 
-### Overview
+## Overview
 
 - [Motivation and Background](Motivation-and-Background)
 - [Goals](Goals)
@@ -13,7 +13,7 @@
 - [Frequently Asked Questions](Frequently-Asked-Questions)
 
 
-### Searching the wiki
+## Searching the wiki
 
 To search this wiki use the "Search" field in the GitHub navigation bar above. Then on the search results page select the "Wiki" option or [use this shortcut to search](https://github.com/scriptingosx/installomator/search?q=&type=Wikis&utf8=%E2%9C%93).
 
@@ -25,7 +25,7 @@ To search this wiki use the "Search" field in the GitHub navigation bar above. T
 
 - [Reference guide to fields in labels](Labels-Reference-guide-to-fields)
 
-### Tutorials
+## Tutorials
 
 We now have tutorials for label creation. Trying to illustrate the procedure to build the label and find the version of the app. The various text tools used are explained along the way.
 
