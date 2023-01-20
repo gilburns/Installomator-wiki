@@ -80,7 +80,28 @@ For labels that are able to check the latest version of an app, downloads and in
 
 ## Re-opening of closed app
 
-The `REOPEN` can be used to prevent the reopening of a closed app
+The `REOPEN` variable can be used to prevent the reopening of a closed app
 
 - `yes`:   (default) app will be reopened if it was closed
 - `no`:    app not reopened
+
+## Values from Arguments
+
+You can provide a configuration variable, such as `DEBUG` or `NOTIFY` as an argument in the form `VARIABLE=value`. For example:
+
+```
+./Installomator.sh desktoppr DEBUG=0 NOTIFY=silent
+```
+
+Providing variables this way will override any variables set in the script.
+
+You can even provide _all_ the variables necessary for download and installation. Of course, without a label the argument parsing will fail, there is a special label `valuesfromarguments` which only checks if the four required values are present:
+
+```
+./Installomator.sh valuesfromarguments name=desktoppr type=pkg downloadURL=https://github.com/scriptingosx/desktoppr/releases/download/v0.3/desktoppr-0.3.pkg expectedTeamID=JME5BW3F3R 
+```
+
+The label has to be the first argument. The order of the variables is not relevant.
+
+Providing all the variables this way might be useful for certain downloads that have a customized URL for each vendor/customer (like customized TeamView or Watchman Monitoring) or are local downloads.
+
