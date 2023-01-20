@@ -13,6 +13,8 @@ The wiki is currently being worked on. Please [see the Readme.md for current doc
 - [What it does](What-it-does)
 - [Using Installomator](Using-Installomator)
 - [Configuration and Variables](Configuration-and-Variables)
+- [Labels Variable Reference](https://github.com/Installomator/Installomator/wiki/Label-Variables-Reference)
+- [Frequently Asked Questions](Frequently-Asked-Questions)
 - [Methods to Run Installomator](Methods-to-Run-Installomator)
 
 ### Searching the wiki
