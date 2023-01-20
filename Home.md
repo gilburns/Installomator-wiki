@@ -1,11 +1,6 @@
 
 ![Installomator logo black](https://user-images.githubusercontent.com/3985769/203938438-f412c24d-fd5c-458c-a39e-e265dd10ad0b.png)
 
-
-## Getting Started with Installomator
-
-The wiki is currently being worked on. Please [see the Readme.md for current documentation on Installomator](https://github.com/scriptingosx/Installomator).
-
 ### Overview
 
 - [Motivation and Background](Motivation-and-Background)
@@ -14,8 +9,9 @@ The wiki is currently being worked on. Please [see the Readme.md for current doc
 - [Using Installomator](Using-Installomator)
 - [Configuration and Variables](Configuration-and-Variables)
 - [Labels Variable Reference](https://github.com/Installomator/Installomator/wiki/Label-Variables-Reference)
-- [Frequently Asked Questions](Frequently-Asked-Questions)
 - [Methods to Run Installomator](Methods-to-Run-Installomator)
+- [Frequently Asked Questions](Frequently-Asked-Questions)
+
 
 ### Searching the wiki
 
