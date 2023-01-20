@@ -4,6 +4,8 @@ When Installomator runs with a known label, the script will perform the followin
 
 - Check the version installed with the version online. Only continue if it's different
 - download the latest version from the vendor
+- verify download is signed and notarized (fail if not)
+- compares Apple Developer Team ID with expected value (fail if no match)
 - when the application is running, prompt the user to quit or cancel (customizable)
 - dmg or other archives:
     - extract the application and copy it to /Applications
