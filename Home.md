@@ -8,9 +8,10 @@ The wiki is currently being worked on. Please [see the Readme.md for current doc
 
 ### Overview
 
-See [How Installomator Works](How-Installomator-Works) for a basic overview of Installomator and how it works.
-
-In [Methods to Run Installomator](Methods-to-Run-Installomator) it’s described how to implement Installomator using various MDM solutions.
+- [Motivation and Background](Motivation-and-Background)
+- [Goals](Goals)
+- [How Installomator Works](How-Installomator-Works)
+- [Methods to Run Installomator](Methods-to-Run-Installomator)
 
 ### Searching the wiki
 
