@@ -2,6 +2,8 @@ There are three important branches in the repo:
 
 ## main
 
+This is the default branch.
+
 The [`main`](https://github.com/Installomator/Installomator) branch is the one with the next version that _we are actively working on_ (the next minor version release).
  
 It should only contain new application labels, updated application labels, and minor fixes to the code. Installomator is designed so that changes to labels should not affect the remaining code, so the main branch should be mostly safe, even when you get it from the main branch. Nevertheless, it may contain things that are in flux or not yet thoroughly tested.
