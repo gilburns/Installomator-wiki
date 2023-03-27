@@ -1,4 +1,4 @@
-In Jamf Pro, create a new ‘Script’ and paste the contents of `Installomator.sh` into the ‘Script Contents’ area.
+In Jamf Pro, create a new ‘Script’ and paste the contents of `Installomator.sh` into the `Script Contents` area.
 
 Remember to set `DEBUG` to `0`.
 
