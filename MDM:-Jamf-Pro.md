@@ -1,4 +1,4 @@
-In Jamf Pro, create a new ‘Script’ and paste the contents of `Installomator.sh` into the `Script Contents` area.
+[Follow Jamf's instructions](https://learn.jamf.com/bundle/jamf-pro-documentation-current/page/Scripts.html) to upload the Installomator.sh script.
 
 Remember to set `DEBUG` to `0`.
 
