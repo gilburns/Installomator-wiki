@@ -105,3 +105,12 @@ The label has to be the first argument. The order of the variables is not releva
 
 Providing all the variables this way might be useful for certain downloads that have a customized URL for each vendor/customer (like customized TeamView or Watchman Monitoring) or are local downloads.
 
+## Other
+The `RETURN_LABEL_NAME` variable can be used to only return the `name` of an app, as it's specified in the app label.
+
+Installomator will return the name of the label and exit, so the last line of output will be the app name. When Installomator is locally installed and one use's swiftDialog or DEPNotify, then you don't have to manually specify the nicer looking app name to the user.
+
+An example for Google Chrome:
+`displayName=$(/usr/local/Installomator/Installomator.sh googlechromepkg RETURN_LABEL_NAME=1| tail -n 1)`
+
+`$displayName` would return `Google Chrome`.
