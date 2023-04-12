@@ -111,6 +111,7 @@ The `RETURN_LABEL_NAME` variable can be used to only return the `name` of an app
 Installomator will return the name of the label and exit, so the last line of output will be the app name. When Installomator is locally installed and one use's swiftDialog or DEPNotify, then you don't have to manually specify the nicer looking app name to the user.
 
 An example for Google Chrome:
+
 `displayName=$(/usr/local/Installomator/Installomator.sh googlechromepkg RETURN_LABEL_NAME=1| tail -n 1)`
 
 `$displayName` would return `Google Chrome`.
