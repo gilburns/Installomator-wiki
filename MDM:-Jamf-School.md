@@ -1,5 +1,3 @@
-# MDM: Jamf School
-
 Utilizing Installomator within the limitations of Jamf School is somewhat unique, but is a fantastic way to extend the MDM. The following information provides examples of how I quickly implemented Installomator in a Jamf School MDM environment using only basic Mac Admin skills.
 
 Requirements:
