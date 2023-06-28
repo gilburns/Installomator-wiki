@@ -1,6 +1,6 @@
 ## Configuring the script
 
-There are several default settings for certain behavior and notifications inside the script, but these can be customized when calling the script.
+There are several default settings for certain behavior, popups, and notifications inside the script, but these can be customized when calling the script.
 
 You can change the variables in the script directly. This means the default changes for your deployment for all instances where you use Installomator. You will have to remember to change the variables again when there is an update to Installomator that you deploy.
 
