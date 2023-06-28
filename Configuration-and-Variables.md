@@ -16,7 +16,7 @@ The application label has to be the first argument, followed by (optional) varia
 
 ## Blocking Process actions
 
-The `BLOCKING_PROCESS_ACTION` variable controls the behavior of the script when it finds a blocking process running. The default value is `tell_user`
+The `BLOCKING_PROCESS_ACTION` variable controls the behavior of the script when it finds a blocking process running. The default value is `tell_user`. BLOCKING_PROCESS_ACTION prompts use AppleScript popups for interact with the user.
 
 - `ignore`: continue even when blocking processes are found.
 - `silent_fail`: Exit script without prompt or installation.
@@ -28,15 +28,20 @@ The `BLOCKING_PROCESS_ACTION` variable controls the behavior of the script when 
 - `tell_user_then_kill`: User will be showed a notification about the important update, but user is only allowed to Quit and Continue. If the quitting fails, the blocking processes will be terminated.
 - `kill`: kill process without prompting or giving the user a chance to save.
 
-If any process was closed, Installomator will try to open the app again, after the update process is done.
+If any process was closed, Installomator will try to open the app again, after the update process is done. See the [REOPEN variable below for more information.](https://github.com/Installomator/Installomator/wiki/Configuration-and-Variables#re-opening-of-closed-app)
 
 ## Notification
 
-The `NOTIFY` variable controls the notifications shown to the user. The default is `success`.
+The `NOTIFY` variable controls the notifications shown to the user, notifications like when an app was installed/updated. The default is `success`. Notifications are native macOS notifications. By default, AppleScript is used and, yes we agree, is not user friendly. Clicking it will open Script Editor. It's useful however for IT use when running initial deployments, for example in a computer lab.
+
+We recommend installing swiftDialog, which supports a custom notification icon, and setting `NOTIFY_DIALOG` shown below.
 
 - `success`:   (default) notify the user after a successful install
 - `silent`:    no notifications
 - `all`:       all notifications (great for Self Service installation)
+
+## Use swiftDialog for notifications
+If the `NOTIFY_DIALOG` variable is set to 1, then Installomator will check for [swiftDialog](https://github.com/bartreardon/swiftDialog) 2 or later, and if installed use that for notifications. `0` is default. Installomator, of course, can install swiftDialog. 
 
 ### Logo
 
@@ -53,7 +58,7 @@ Alternatively a path to an icon file can be provided. E.g. `LOGO="/System/Applic
 ## App Store apps handling
 The `IGNORE_APP_STORE_APPS` variable controls how Installomator deals with Apps that were previously installed from the App Store. The default is `no`.
 
-Known bad example: Slack will 'forget' all settings when the non-App Store version is installed over the App Store version.
+Make sure to test first if you want to replace an App Store app. For example, Slack will 'forget' all settings when the non-App Store version is installed over the App Store version.
 
 - `no`: when installed app is from App Store (which include VPP installed apps) it will not be touched, no matter it's version (default)
 - `yes`: install over App Store (VPP) app, even if latest version 
