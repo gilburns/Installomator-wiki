@@ -40,6 +40,8 @@ We recommend installing swiftDialog, which supports a custom notification icon, 
 - `silent`:    no notifications
 - `all`:       all notifications (great for Self Service installation)
 
+`All` notifications includes things like download in progress, update not needed, installation complete, and failure messages, if any.
+
 ## Use swiftDialog for notifications
 If the `NOTIFY_DIALOG` variable is set to 1, then Installomator will check for [swiftDialog](https://github.com/bartreardon/swiftDialog) 2 or later, and if installed use that for notifications. `0` is default. Installomator, of course, can install swiftDialog. 
 
