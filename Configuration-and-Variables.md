@@ -30,9 +30,9 @@ The `BLOCKING_PROCESS_ACTION` variable controls the behavior of the script when 
 
 If any process was closed, Installomator will try to open the app again, after the update process is done. See the [REOPEN variable below for more information.](https://github.com/Installomator/Installomator/wiki/Configuration-and-Variables#re-opening-of-closed-app)
 
-It is recommended to use the `PROMPT_TIMEOUT` variable when using `prompt_user` or `prompt_user_then_kill`.
+It is recommended to set the `PROMPT_TIMEOUT` variable to your environment's appropriate setting when using `prompt_user` or `prompt_user_then_kill`. It is recommended not to use a timeout time higher than your MDM's occurring check-in time, which may be every 15 minutes or every hour.
 
-- `PROMPT_TIMEOUT`: Time in seconds to wait for a prompt to be answered before closing the dialog box and exiting the script. Supported when `BLOCKING_PROCESS_ACTION` is set to `prompt_user` or `prompt_user_then_kill`. **Default is 86400. (24 hours)** Without this, a `BLOCKING_PROCESS_ACTION` prompt will cause the scheduled MDM binary process to hang while waiting for a user to reply to the prompt. (A user may leave the prompt up behind another window, or not be at the computer at all.) For example, PROMPT_TIMEOUT=300 will close the dialog box and exit the script if the user does not respond to the dialog box within 5 minutes. It is recommended not to use a timeout time higher than your MDM's occurring check-in time, which may be every 15 minutes or every hour.
+- `PROMPT_TIMEOUT`: Time in seconds to wait for a prompt to be answered before closing the dialog box and exiting the script. Supported when `BLOCKING_PROCESS_ACTION` is set to `prompt_user` or `prompt_user_then_kill`. **Default is 86400. (24 hours)** Without this, a `BLOCKING_PROCESS_ACTION` prompt will cause the scheduled MDM binary process to hang while waiting for a user to reply to the prompt. (A user may leave the prompt up behind another window, or not be at the computer at all.) For example, PROMPT_TIMEOUT=300 will close the dialog box and exit the script if the user does not respond to the dialog box within 5 minutes.
 
 ## Notification
 
