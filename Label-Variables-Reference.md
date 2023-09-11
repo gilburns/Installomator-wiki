@@ -113,7 +113,7 @@ Depending on the application or pkg there are a few more variables you can or ne
   File name of the pkg file _inside_ the dmg or zip.
   When not given the pkgName is set to `$name.pkg`.
 
-- `PROMPT_TIMEOUT`: Time in seconds to wait for a prompt to be answered before closing the dialog box and exiting the script. Supported when `BLOCKING_PROCESS_ACTION` is set to `prompt_user` or `prompt_user_then_kill`. *Default is 86400. (24 hours)* This prevents a `BLOCKING_PROCESS_ACTION` prompt from causing your MDM binary to hang waiting for a user to reply to the prompt in order to continue scheduled check-ins/policy runs. For example, PROMPT_TIMEOUT=300 will close the dialog box and exit the script if the user does not respond to the dialog box within 5 minutes. It is recommended not to use a timeout time higher than your MDM's occurring check-in time, which may be every 15 minutes or every hour.
+- `PROMPT_TIMEOUT`: Time in seconds to wait for a prompt to be answered before closing the dialog box and exiting the script. Supported when `BLOCKING_PROCESS_ACTION` is set to `prompt_user` or `prompt_user_then_kill`. **Default is 86400. (24 hours)** Without this, a `BLOCKING_PROCESS_ACTION` prompt will cause the scheduled MDM binary process to hang while waiting for a user to reply to the prompt. For example, PROMPT_TIMEOUT=300 will close the dialog box and exit the script if the user does not respond to the dialog box within 5 minutes. It is recommended not to use a timeout time higher than your MDM's occurring check-in time, which may be every 15 minutes or every hour.
 
 - `updateTool`, `updateToolArguments`:
   When Installomator detects an existing installation of the application,
