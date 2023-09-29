@@ -109,12 +109,16 @@ The `REOPEN` variable can be used to prevent the reopening of a closed app
 
 ## Do Not Disturb
 
-Should Installomator Interrupt Do Not Disturb (DND) full screen apps? Before `INTERRUPT_DND` variable existed, Installomator would disturb (ask to quit) these apps that support this feature, but this variable makes it possible to not disturb them.
+Installomator can check if certain apps have a "display assertion", which stops the screen saver from activating. This can be used as a sign that the user shouldn't be interrupted with a prompt to update an app.
+
+Examples of apps that set display assertions: Zoom during a call, PowerPoint when presenting, Chrome (and other browsers) when playing a YouTube video in the active browser tab.
+
+`INTERRUPT_DND`
 
 -  `yes`: (default) Script will run without checking for DND full screen apps.
 -  `no`: Script will exit when an active DND full screen app is detected.
 
-Comma separated list of app names to ignore when evaluating DND, can be put in `IGNORE_DND_APPS`.
+Additionally, comma separated list of app names to ignore when evaluating DND, can be put in `IGNORE_DND_APPS`.
 
 Example that will ignore browsers when evaluating DND:
 
