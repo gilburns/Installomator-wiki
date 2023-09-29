@@ -36,9 +36,9 @@ It is recommended to set the `PROMPT_TIMEOUT` variable to your environment's app
 
 - `PROMPT_TIMEOUT`: Time in seconds to wait for a prompt to be answered before closing the dialog box and exiting the script. **Default is 86400 (24 hours).** 
 
-  Without this, a `BLOCKING_PROCESS_ACTION` prompt will cause the scheduled MDM binary process to hang while waiting for a user to reply to the prompt. (A user may leave the prompt up behind another window, or not be at the computer at all.) 
+Without this, a `BLOCKING_PROCESS_ACTION` prompt will cause the scheduled MDM binary process to hang while waiting for a user to reply to the prompt. (A user may leave the prompt up behind another window, or not be at the computer at all.) 
   
-  For example, `PROMPT_TIMEOUT=300` will close the dialog box and exit the script if the user does not respond to the dialog box within 5 minutes.
+For example, `PROMPT_TIMEOUT=300` will close the dialog box and exit the script if the user does not respond to the dialog box within 5 minutes.
 
 ## Notification
 
