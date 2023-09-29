@@ -30,6 +30,8 @@ The `BLOCKING_PROCESS_ACTION` variable controls the behavior of the script when 
 
 If any process was closed, Installomator will try to open the app again, after the update process is done. See the [REOPEN variable below for more information.](https://github.com/Installomator/Installomator/wiki/Configuration-and-Variables#re-opening-of-closed-app)
 
+## Time to wait for a user to answer a dialog
+
 It is recommended to set the `PROMPT_TIMEOUT` variable to your environment's appropriate setting when using `prompt_user` or `prompt_user_then_kill`. It is recommended not to use a timeout time higher than your MDM's occurring check-in time, which may be every 15 minutes or every hour.
 
 - `PROMPT_TIMEOUT`: Time in seconds to wait for a prompt to be answered before closing the dialog box and exiting the script. Supported when `BLOCKING_PROCESS_ACTION` is set to `prompt_user` or `prompt_user_then_kill`. **Default is 86400. (24 hours)** Without this, a `BLOCKING_PROCESS_ACTION` prompt will cause the scheduled MDM binary process to hang while waiting for a user to reply to the prompt. (A user may leave the prompt up behind another window, or not be at the computer at all.) For example, PROMPT_TIMEOUT=300 will close the dialog box and exit the script if the user does not respond to the dialog box within 5 minutes.
@@ -38,15 +40,16 @@ It is recommended to set the `PROMPT_TIMEOUT` variable to your environment's app
 
 The `NOTIFY` variable controls the notifications shown to the user, notifications like when an app was installed/updated. The default is `success`. Notifications are native macOS notifications. By default, AppleScript is used and, yes we agree, is not user friendly. Clicking it will open Script Editor. It's useful however for IT use when running initial deployments, for example in a computer lab.
 
-We recommend installing swiftDialog, which supports a custom notification icon, and setting `NOTIFY_DIALOG` shown below.
-
 - `success`:   (default) notify the user after a successful install
 - `silent`:    no notifications
 - `all`:       all notifications (great for Self Service installation)
 
-`All` notifications includes things like download in progress, update not needed, installation complete, and failure messages, if any.
+`all` notifications includes things like download in progress, update not needed, installation complete, and failure messages, if any. Can be useful for Self Service items, but we recommend to use swiftDialog instead
+
+We recommend installing swiftDialog, which supports a custom notification icon, and setting `NOTIFY_DIALOG` shown below.
 
 ## Use swiftDialog for notifications
+
 If the `NOTIFY_DIALOG` variable is set to 1, then Installomator will check for [swiftDialog](https://github.com/bartreardon/swiftDialog) 2 or later, and if installed use that for notifications. `0` is default. Installomator, of course, can install swiftDialog. 
 
 ### Logo
@@ -62,6 +65,7 @@ The `LOGO` variable is used for the icon shown in dialog boxes. (But not notific
 Alternatively a path to an icon file can be provided. E.g. `LOGO="/System/Applications/App\ Store.app/Contents/Resources/AppIcon.icns"` (spaces are escaped).
 
 ## App Store apps handling
+
 The `IGNORE_APP_STORE_APPS` variable controls how Installomator deals with Apps that were previously installed from the App Store. The default is `no`.
 
 Make sure to test first if you want to replace an App Store app. For example, Slack will 'forget' all settings when the non-App Store version is installed over the App Store version.
@@ -95,6 +99,19 @@ The `REOPEN` variable can be used to prevent the reopening of a closed app
 
 - `yes`:   (default) app will be reopened if it was closed
 - `no`:    app not reopened
+
+## Do Not Disturb
+
+Should Installomator Interrupt Do Not Disturb (DND) full screen apps? Before `INTERRUPT_DND` variable existed, Installomator would disturb (ask to quit) these apps that support this feature, but this variable makes it possible to not disturb them.
+
+-  `yes`:   (default) Script will run without checking for DND full screen apps.
+-  `no`:    Script will exit when an active DND full screen app is detected.
+
+Comma separated list of app names to ignore when evaluating DND, can be put in `IGNORE_DND_APPS`.
+
+Example that will ignore browsers when evaluating DND:
+
+`IGNORE_DND_APPS="firefox,Google Chrome,Safari,Microsoft Edge,Opera,Amphetamine,caffeinate"`
 
 ## Values from Arguments
 
