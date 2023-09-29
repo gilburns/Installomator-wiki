@@ -10,7 +10,7 @@ For example, when you want to override the `DEBUG` value to `0` (production) wit
 
 ```
 sudo ./Installomator.sh <label> DEBUG=0
-``` 
+```
 
 The application label has to be the first argument, followed by (optional) variable overrides. The order in which you override variables is irrelevant.
 
@@ -32,9 +32,13 @@ If any process was closed, Installomator will try to open the app again, after t
 
 ## Time to wait for a user to answer a dialog
 
-It is recommended to set the `PROMPT_TIMEOUT` variable to your environment's appropriate setting when using `prompt_user` or `prompt_user_then_kill`. It is recommended not to use a timeout time higher than your MDM's occurring check-in time, which may be every 15 minutes or every hour.
+It is recommended to set the `PROMPT_TIMEOUT` variable to your environment's appropriate setting when using `BLOCKING_PROCESS_ACTION` equal to `prompt_user` or `prompt_user_then_kill`. It is recommended not to use a timeout time higher than your MDM's occurring check-in time, which may be every 15 minutes or every hour.
 
-- `PROMPT_TIMEOUT`: Time in seconds to wait for a prompt to be answered before closing the dialog box and exiting the script. Supported when `BLOCKING_PROCESS_ACTION` is set to `prompt_user` or `prompt_user_then_kill`. **Default is 86400. (24 hours)** Without this, a `BLOCKING_PROCESS_ACTION` prompt will cause the scheduled MDM binary process to hang while waiting for a user to reply to the prompt. (A user may leave the prompt up behind another window, or not be at the computer at all.) For example, PROMPT_TIMEOUT=300 will close the dialog box and exit the script if the user does not respond to the dialog box within 5 minutes.
+- `PROMPT_TIMEOUT`: Time in seconds to wait for a prompt to be answered before closing the dialog box and exiting the script. **Default is 86400 (24 hours).** 
+
+  Without this, a `BLOCKING_PROCESS_ACTION` prompt will cause the scheduled MDM binary process to hang while waiting for a user to reply to the prompt. (A user may leave the prompt up behind another window, or not be at the computer at all.) 
+  
+  For example, `PROMPT_TIMEOUT=300` will close the dialog box and exit the script if the user does not respond to the dialog box within 5 minutes.
 
 ## Notification
 
@@ -56,11 +60,14 @@ If the `NOTIFY_DIALOG` variable is set to 1, then Installomator will check for [
 
 The `LOGO` variable is used for the icon shown in dialog boxes. (But not notifications.)
 
-- `appstore`:    Icon is Apple App Store (default)
-- `jamf`:        JAMF Pro
-- `mosyleb`:     Mosyle Business
-- `mosylem`:     Mosyle Manager (Education)
-- `addigy`:      Addigy
+- `appstore`: Icon is Apple App Store (default)
+- `jamf`: JAMF Pro
+- `mosyleb`: Mosyle Business
+- `mosylem`: Mosyle Manager (Education)
+- `addigy`: Addigy
+- `microsoft`: Microsoft Endpoint Manager (Intune)
+- `ws1`: Workspace ONE (AirWatch)
+- `filewave`: FileWave
 
 Alternatively a path to an icon file can be provided. E.g. `LOGO="/System/Applications/App\ Store.app/Contents/Resources/AppIcon.icns"` (spaces are escaped).
 
@@ -90,22 +97,22 @@ However, this will prohibit the app from updating itself, but it will not preven
 
 For labels that are able to check the latest version of an app, downloads and installations will only be performed when the latest version (`appNewVersion`) differs from the installed version. The `INSTALL` variable can be used to force the installation in any case.
 
-- ` `:           When not set, software is only installed if it is newer/different in version (default)
-- `force`:       Install even if it’s the same version
+- ` `: When not set, software is only installed if it is newer/different in version (default)
+- `force`: Install even if it’s the same version
 
 ## Re-opening of closed app
 
 The `REOPEN` variable can be used to prevent the reopening of a closed app
 
-- `yes`:   (default) app will be reopened if it was closed
-- `no`:    app not reopened
+- `yes`: (default) app will be reopened if it was closed
+- `no`: app not reopened
 
 ## Do Not Disturb
 
 Should Installomator Interrupt Do Not Disturb (DND) full screen apps? Before `INTERRUPT_DND` variable existed, Installomator would disturb (ask to quit) these apps that support this feature, but this variable makes it possible to not disturb them.
 
--  `yes`:   (default) Script will run without checking for DND full screen apps.
--  `no`:    Script will exit when an active DND full screen app is detected.
+-  `yes`: (default) Script will run without checking for DND full screen apps.
+-  `no`: Script will exit when an active DND full screen app is detected.
 
 Comma separated list of app names to ignore when evaluating DND, can be put in `IGNORE_DND_APPS`.
 
