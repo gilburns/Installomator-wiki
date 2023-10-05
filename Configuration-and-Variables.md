@@ -14,6 +14,26 @@ sudo ./Installomator.sh <label> DEBUG=0
 
 The application label has to be the first argument, followed by (optional) variable overrides. The order in which you override variables is irrelevant.
 
+__Tip__: You can evene override variable names in labels. So if the `downloadURL` is incorrect, it can be corrected in the call by adding `"downloadURL=https://host/some/path"`. It's recommended to use set `LOGGING=DEBUG` when testing these changes, so it can be seen if Installomator gets the new variable correctly. Spaces and other characters have to be escape even though they are in quotes. Also if using `valuesfromarguments`.
+ 
+## Debug
+
+THe `DEBUG` variable will only for the value `0` start an actual installation.
+
+- `1`: (default) will download to the directory the script is run in, but will not check the version
+- `2`: will download to the temp directory, check for blocking processes, check the version, but will not install anything or remove the current version
+- `0`: Runs fully with check and install/update
+
+## Logging level
+
+- `DEBUG`: Everything is logged
+- `INFO`: (default) normal logging level
+- `WARN`: only warning
+- `ERROR`: only errors
+- `REQ`: Required
+
+NOTE:	Especially for `valuesfromarguments` or when overriding label variables, it’s useful with `LOGGING=DEBUG`
+
 ## Blocking Process actions
 
 The `BLOCKING_PROCESS_ACTION` variable controls the behavior of the script when it finds a blocking process running. The default value is `tell_user`. BLOCKING_PROCESS_ACTION prompts use AppleScript popups for interact with the user.
