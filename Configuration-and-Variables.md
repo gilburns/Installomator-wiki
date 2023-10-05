@@ -26,6 +26,8 @@ THe `DEBUG` variable will only for the value `0` start an actual installation.
 
 ## Logging level
 
+Installomator categorizes logging in various levels, so it's possible to limit logging or get everything logged.
+
 - `DEBUG`: Everything is logged
 - `INFO`: (default) normal logging level
 - `WARN`: only warning
