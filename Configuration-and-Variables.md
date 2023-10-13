@@ -40,6 +40,8 @@ NOTE:	Especially for `valuesfromarguments` or when overriding label variables, i
 
 The `BLOCKING_PROCESS_ACTION` variable controls the behavior of the script when it finds a blocking process running. The default value is `tell_user`. BLOCKING_PROCESS_ACTION prompts use AppleScript popups for interact with the user.
 
+**`BLOCKING_PROCESS_ACTION` is ignored if an app has an `updateTool` variable because closing the app is not necessary. The update tool handles notifying the user. However if `INSTALL=force` is set, then `updateTool` is not used. **
+
 - `ignore`: continue even when blocking processes are found.
 - `silent_fail`: Exit script without prompt or installation.
 - `prompt_user`: Show a user dialog for each blocking process found, user can choose "Quit and Update" or "Not Now". When "Quit and Update" is chosen, blocking process will be told to quit. Installomator will wait 30 seconds before checking again in case Save dialogs etc are being responded to. Installomator will abort if quitting after three tries does not succeed. "Not Now" will exit Installomator.
