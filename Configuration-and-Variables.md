@@ -40,7 +40,7 @@ NOTE:	Especially for `valuesfromarguments` or when overriding label variables, i
 
 The `BLOCKING_PROCESS_ACTION` variable controls the behavior of the script when it finds a blocking process running. The default value is `tell_user`. BLOCKING_PROCESS_ACTION prompts use AppleScript popups for interact with the user.
 
-**`BLOCKING_PROCESS_ACTION` is ignored if an app has an `updateTool` variable because closing the app is not necessary. The update tool handles notifying the user. However if `INSTALL=force` is set, then `updateTool` is not used. **
+**`BLOCKING_PROCESS_ACTION` is ignored if an app has an `updateTool` variable because closing the app is not necessary. The update tool handles notifying the user. However if `INSTALL=force` is set, then `updateTool` is not used.**
 
 - `ignore`: continue even when blocking processes are found.
 - `silent_fail`: Exit script without prompt or installation.
