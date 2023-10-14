@@ -78,7 +78,7 @@ We recommend installing swiftDialog, which supports a custom notification icon, 
 
 ## Use swiftDialog for notifications
 
-If the `NOTIFY_DIALOG` variable is set to 1, then Installomator will check for [swiftDialog](https://github.com/bartreardon/swiftDialog) 2 or later, and if installed use that for notifications. `0` is default. Installomator, of course, can install swiftDialog. 
+If the `NOTIFY_DIALOG` variable is set to 1, then Installomator will check for [swiftDialog](https://github.com/swiftDialog/swiftDialog) 2 or later, and if installed use that for notifications. `0` is default. Installomator, of course, can install swiftDialog. 
 
 ### Logo
 
