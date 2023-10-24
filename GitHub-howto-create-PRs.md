@@ -18,9 +18,9 @@ __Remember to not change the Installomator.sh script, but the add or modify file
 
 Now your branch can be edited and new label files can be edited or other changes/improvements can be made.
 
-Different Text editors can be used for this, but Xcode, BBEdit, or Sublime Text are great solutions.
+Different text editors can be used for this, but Xcode, BBEdit, or Sublime Text are great ones to use.
 
-Testing Installomator is done with the `assamble.sh` script:
+Testing Installomator is done with the `assemble.sh` script:
 ```
 Installomator/utils/assemble.sh label
 ```
