@@ -1,4 +1,4 @@
-It's expected, but not tested, that Endpoint Manager can run Installomator by installing Installomator locally, and running Installomator with a script. 
+It has now been tested, that Intune can run Installomator by installing Installomator locally, and running Installomator with a MDM scripts. 
 
 We have a README and several example scripts in the [Installomator repo's MDM folder](https://github.com/Installomator/Installomator/tree/main/MDM).
 
