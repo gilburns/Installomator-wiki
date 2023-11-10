@@ -93,6 +93,10 @@ Depending on the application or pkg there are a few more variables you can or ne
   When not given, the `appName` is set to `$name.app`.
   This is also the name of the app that will get reopned, if we closed any `blockingProcesses` (see further down)
 
+- `appCustomVersion `: (optional)
+  This function can be added to your label, if a specific custom mechanism has to be used for getting the installed version.
+  (Instead of checking the .app version on disk, or checking a pkg receipt) Commonly used to check the output of a binary command, like `/usr/bin/MyApp --version`. Example: See labels `zulujdk11`, `zulujdk13`, `zulujdk15`.
+
 - `targetDir`: (optional)
   dmg or zip:
     Applications will be copied to this directory.
