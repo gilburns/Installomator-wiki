@@ -22,7 +22,7 @@ Installomator has a number of exit codes when something goes wrong:
 
 `10`: User aborted update
 
-`11`: Cloud not quit/kill all blocking processes
+`11`: Could not quit/kill all blocking processes
 
 `12`: Blocking process found and `silent_fail` is set
 
